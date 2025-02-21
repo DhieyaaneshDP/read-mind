@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Mind - Online Book Reader</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    
     <style>
         /* General Styles */
         body {
@@ -27,7 +26,7 @@
             object-fit: cover;
         }
 
-        /* Main Navbar */
+        /* Main Navbar (Original) */
         .main-header {
             background-color: #ecd69f;
             padding: 15px 0;
@@ -35,6 +34,7 @@
             position: relative;
             z-index: 1000;
         }
+        
 
         /* Sticky Navbar */
         #sticky-navbar {
@@ -196,14 +196,29 @@
         }
         .track{
             border-radius: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            
         }
 
-        /* Contact Section */
         .contact {
-            padding: 80px 20px;
-            text-align: center;
+            text-align:center;
+            font-weight: bold;
+            width: 100%;
+            height: auto;
             background: black;
             color: white;
+        }
+        #container {
+    display: flex;
+    flex-direction: column; /* Keeps text and image stacked */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto; /* Adjust based on your layout */
+        }
+        .con-img{
+            border-radius: 2.5%;
         }
     </style>
 </head>
@@ -217,9 +232,9 @@
         <header class="main-header">
             <div class="logo-title">
                 <div class="logo">
-               <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+                    <div class="w-10 h-10 flex items-center justify-center"><i class="ri-book-line ri-2x"></i></div>
                 </div>
-                <h2>Read Mind</h2>
+                <h2><b>Read Mind</b></h2>
             </div>
             <nav>
                 <ul>
@@ -235,6 +250,19 @@
                 <a href="login.html" class="sign-up">Log in</a>
             </div>
         </header>
+       
+        
+        <pre>
+            Welcome to Read Mind – Your Gateway to Endless Knowledge!
+At Read Mind, we believe that books are the keys to wisdom, imagination, and growth. 
+Our mission is to make reading accessible and enjoyable for everyone, anytime and anywhere. 
+Whether you're a curious learner, a passionate reader, or someone seeking inspiration, 
+our vast collection of books across all genres is here to fuel your mind and heart.
+
+Join us on this journey of discovery, learning, and adventure. Happy Reading!
+
+        </pre>
+        <img src="c.png" alt="" height="50px" width="70%" class="con-img">
     </div>
 
     <!-- Sticky Navbar -->
@@ -258,16 +286,6 @@
             <a href="signin.html" class="sign-in">Sign In</a>
             <a href="login.html" class="sign-up">Log in</a>
         </div>
-        <pre>
-            Welcome to Read Mind – Your Gateway to Endless Knowledge!
-At Read Mind, we believe that books are the keys to wisdom, imagination, and growth. 
-Our mission is to make reading accessible and enjoyable for everyone, anytime and anywhere. 
-Whether you're a curious learner, a passionate reader, or someone seeking inspiration, 
-our vast collection of books across all genres is here to fuel your mind and heart.
-
-Join us on this journey of discovery, learning, and adventure. Happy Reading!
-
-        </pre>
     </nav>
 
     <!-- About Section -->
@@ -290,7 +308,7 @@ Join us on this journey of discovery, learning, and adventure. Happy Reading!
     </div>
 
     <!-- Bookmarks Section -->
-    <div class="bookmarks">
+    <div class="bookmarks" id="bookmarks">
         
         <h1>📌 Track Your Reading Progress</h1>
         <p>Save and manage bookmarks to keep track of your favorite books and reading history.</p>
@@ -300,11 +318,33 @@ Join us on this journey of discovery, learning, and adventure. Happy Reading!
     </div>
 
     <!-- Contact Section -->
-    <div class="contact">
-        
+    <div class="contact" id="contact-us">
         <h2>📬 Contact Us</h2>
         <p>Have any queries? Reach out to us for support, feedback, or suggestions.</p>
+        <pre>
+        Feel free to contact us anytime in the mail and numbers below
+        Email:-readmind@gmail.com
+        Phone Number:-+0424 6966050
+                    :+90323252555
+    Abc complex,1st floor,Guindy,chennai-683055.
+        </pre>
     </div>
+
+    <script>
+        // Sticky Navbar Script
+        window.addEventListener('scroll', function () {
+            const aboutSection = document.querySelector('#about');
+            const stickyNavbar = document.querySelector('#sticky-navbar');
+
+            const aboutTop = aboutSection.getBoundingClientRect().top;
+
+            if (aboutTop <= 0) {
+                stickyNavbar.classList.add('show');
+            } else {
+                stickyNavbar.classList.remove('show');
+            }
+        });
+    </script>
 
 </body>
 </html>

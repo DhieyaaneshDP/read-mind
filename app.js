@@ -1,4 +1,3 @@
-
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 document.getElementById('user-input').addEventListener('keypress', function(event) {
     if (event.key === "Enter") {
